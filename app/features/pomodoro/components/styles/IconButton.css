@@ -1,0 +1,93 @@
+/* 
+size: large, medium, small
+color: red, green, blue
+variant: primary, secondary, ghost
+color mode: light, dark
+*/
+
+/* LIGHT MODE */
+
+/* size */
+.large{
+    padding: 32px 48px;
+    gap: 16px;
+    border-radius: 32px;
+}
+.medium{
+    padding: 24px;
+    gap: 16px;
+    border-radius: 24px;
+}
+.small{
+    padding: 8px;
+    border-radius: 8px;
+}
+
+/* color */
+.primary-red{
+    background: var(--red-alpha-600);
+    color: var(--red-900);
+}
+.secondary-red{
+    background: var(--red-alpha-100);
+    color: var(--red-900);
+}
+.ghost-red{
+    background: transparent;
+    color: var(--red-900);
+}
+.primary-green{
+    background: var(--green-alpha-600);
+    color: var(--green-900);
+}
+.secondary-green{
+    background: var(--green-alpha-100);
+    color: var(--green-900);
+}
+.ghost-green{
+    background: transparent;
+    color: var(--green-900);
+}
+.primary-blue{  
+    background: var(--blue-alpha-600);
+    color: var(--blue-900);
+}
+.secondary-blue{
+    background: var(--blue-alpha-100);
+    color: var(--blue-900);
+}
+.ghost-blue{
+    background: transparent;
+    color: var(--blue-900);
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    .primary-red{
+        color: var(--red-50);
+    }
+    .secondary-red{
+        color: var(--red-50);
+    }
+    .ghost-red{
+        color: var(--red-50);
+    }
+    .primary-green{
+        color: var(--green-50);
+    }
+    .secondary-green{
+        color: var(--green-50);
+    }
+    .ghost-green{
+        color: var(--green-50);
+    }
+    .primary-blue{  
+        color: var(--blue-50);
+    }
+    .secondary-blue{
+        color: var(--blue-50);
+    }
+    .ghost-blue{
+        color: var(--blue-50);
+    }
+}

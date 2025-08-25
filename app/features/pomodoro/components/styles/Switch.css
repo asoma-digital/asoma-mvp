@@ -1,0 +1,26 @@
+.switch-wrapper {
+    border-radius: 1000px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    background-color: var(--white-alpha-600);
+    display: flex;
+    width: 34px;
+    height: 20px;
+    padding: 2px;
+    align-items: center;
+    gap: 10px;
+}
+
+.switch-handle {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border-radius: 1000px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+@media(prefers-color-scheme: dark){
+    .switch-wrapper{
+        background-color: var(--white-alpha-200);
+    }
+}

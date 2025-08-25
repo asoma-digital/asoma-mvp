@@ -1,0 +1,187 @@
+/* Base Reset & Background */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #121212;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  background-color: #121212;
+  min-height: 100vh;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+/* Headings */
+.dashboard-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.dashboard-subtitle {
+  color: #aaa;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Tiles Wrapper */
+.dashboard-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Tile Base Style */
+.pomodoro-tile,
+.todo-tile {
+  background-color: #1e1e1e;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pomodoro-tile:hover,
+.todo-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Tile Headings */
+.pomodoro-tile h2,
+.todo-tile h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.pomodoro-tile p,
+.todo-tile p {
+  font-size: 0.95rem;
+  color: #bbb;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.start-button,
+.todo-button {
+  background-color: #7b61ff;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover,
+.todo-button:hover {
+  background-color: #6a4ee0;
+}
+
+/* Logout Button */
+.logout-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: transparent;
+  color: #bbb;
+  font-size: 0.9rem;
+  border: 1px solid #444;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.logout-button:hover {
+  color: #fff;
+  border-color: #a991ff;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .dashboard-tiles {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pomodoro-tile,
+  .todo-tile {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+/* Tile Base Style */
+.pomodoro-tile,
+.todo-tile,
+.top-tasks-tile {
+  background-color: #1e1e1e;
+  border-radius: 16px;
+  width: 300px;
+  height: 220px; /* Ensures consistent height */
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center;     /* Center content horizontally */
+}
+
+.pomodoro-tile:hover,
+.todo-tile:hover,
+.top-tasks-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Tile Headings */
+.pomodoro-tile h2,
+.todo-tile h2,
+.top-tasks-tile h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.pomodoro-tile p,
+.todo-tile p,
+.top-tasks-tile p {
+  font-size: 0.95rem;
+  color: #bbb;
+  margin-bottom: 1.5rem;
+}
+
+/* Top 3 Task Text */
+.top-tasks-tile ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+.top-tasks-tile ul li {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}

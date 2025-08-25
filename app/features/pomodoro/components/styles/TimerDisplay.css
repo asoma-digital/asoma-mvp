@@ -1,0 +1,19 @@
+.timer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 256px;
+  font-style: normal;
+  line-height: 85%;
+}
+
+.timer-paused {
+  font-weight: 200;
+}
+
+.timer-running {
+  font-weight: 800;
+}

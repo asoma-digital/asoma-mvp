@@ -1,0 +1,187 @@
+/* Wrapper takes full screen */
+.register-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0f0f0f;
+  padding: 40px 20px;
+  color: #ffffff;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* The card itself scales up but stays readable */
+.register-card {
+  background-color: #181818;
+  border-radius: 16px;
+  padding: 48px 32px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+
+.icon img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 16px; /* space between image and heading */
+  display: block;
+  object-fit: contain;
+}
+
+
+.register-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.register-subtitle {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Form styling */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.register-form label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.register-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-bottom: 16px;
+  background-color: #222;
+  color: #fff;
+  font-size: 14px;
+}
+
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-bottom: 16px;
+  background-color: #222;
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.register-btn {
+  background-color: #1275ea;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.register-btn:hover {
+  background-color: #0e5dc4;
+}
+
+/* Divider with lines */
+.divider {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  margin: 24px 0;
+  position: relative;
+  width: 100%;
+}
+
+.divider span {
+  background-color: #181818;
+  padding: 0 12px;
+  z-index: 1;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+/* Social buttons */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.social-buttons img {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #2a2a2a;
+  padding: 8px;
+  transition: transform 0.1s ease;
+}
+
+.social-buttons img:hover {
+  transform: scale(1.05);
+}
+
+/* Login redirect text */
+.login-redirect {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.login-redirect .highlight {
+  color: #1275ea;
+  font-weight: 500;
+}

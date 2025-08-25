@@ -1,0 +1,32 @@
+.chip-red{
+    border: 2px solid var(--red-900, #471515);
+    color: var(--red-900, #471515);
+    background: var(--red-alpha-100, rgba(255, 76, 76, 0.15));
+}
+
+.chip-green{
+    border: 2px solid var(--green-900, #1a3d1a);
+    color: var(--green-900);
+    background: var(--green-alpha-100, rgba(76, 255, 76, 0.15));
+}
+
+.chip-blue{
+    border: 2px solid var(--blue-900, #151a3d);
+    color: var(--blue-900, #151a3d);
+    background: var(--blue-alpha-100, rgba(76, 76, 255, 0.15));
+}
+
+@media (prefers-color-scheme: dark) {
+    .chip-red{
+        border-color: var(--red-50, #f8d7da);
+        color: var(--red-50, #f8d7da);
+    }
+    .chip-green{
+        border-color: var(--green-50, #d4edda);
+        color: var(--green-50, #d4edda);
+    }
+    .chip-blue{
+        border-color: var(--blue-50, #d1ecf1);
+        color: var(--blue-50, #d1ecf1);
+    }
+}

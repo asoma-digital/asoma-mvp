@@ -1,0 +1,43 @@
+/* styles/components/TopThreeTasks.css */
+
+.top-tasks-card {
+  background-color: #1c1c1e;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  max-width: 320px;
+  margin: auto;
+}
+
+.top-tasks-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.top-tasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.top-task-item {
+  background-color: #2c2c2e;
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 0.75rem;
+  transition: background-color 0.3s ease;
+}
+
+.top-task-item.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.empty-message {
+  color: #ccc;
+  font-style: italic;
+}

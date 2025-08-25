@@ -1,0 +1,488 @@
+:root{
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    font-family: "Roboto Flex", sans-serif;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.icon{
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.icon-button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chip{
+    display: inline-flex;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 9999px;
+    text-align: center;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.control-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.key{
+    display: inline-flex;
+    padding: 0px 4px;
+    align-items: flex-start;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15px;
+}
+
+.shortcut{
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    opacity: 0.5;
+}
+
+.menu-item{
+    display: flex;
+    width: 224px;
+    padding: 12px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-item-name{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border-radius: 12px;
+    border-width: 1px;
+    padding: 8px;
+    border-color: var(--black-alpha-50);
+    box-shadow:
+        0px 5.5px 16px rgba(0, 0, 0, 0.19),
+        0px 1px 6px rgba(0, 0, 0, 0.039);
+}
+
+.setting-item-switch{
+    display: flex;
+    height: 64px;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    box-sizing: border-box;
+}
+
+.setting-item-number{
+    display: flex;
+    height: 64px;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    box-sizing: border-box;
+}
+
+.settings-modal{
+    display: flex;
+    width: 448px;
+    padding-bottom: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 24px;
+    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.04), 0px 5.5px 16px 0px rgba(0, 0, 0, 0.19);
+}
+
+.settings-modal-header{
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    box-sizing: border-box;
+}
+
+button{
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+h1{
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.15px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(156px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.start-container {
+  background-color: #121212;
+  color: #fff;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Back arrow in top-left */
+.back-button {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  font-size: 24px;
+  color: #ccc;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Main title */
+.start-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.brand-name {
+  color: #7b61ff; /* Your Asoma-inspired purple/blue */
+  text-transform: lowercase;
+}
+
+/* Subtitle text */
+.start-subtitle {
+  color: #aaa;
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+/* Buttons container */
+.start-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 10px;
+}
+
+/* Primary login button */
+.login-button {
+  background-color: #7b61ff;
+  color: #fff;
+  font-size: 16px;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Secondary create button */
+.create-button {
+  background: transparent;
+  border: 1.5px solid #7b61ff;
+  color: #7b61ff;
+  font-size: 16px;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.login-button:hover,
+.create-button:hover {
+  opacity: 0.9;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  padding: 0%;
+  margin: 0;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove problematic centering */
+body {
+  display: block;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: none;
+}
+a:hover {
+  color: #535bf2;
+}
+
+/* Headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Utility styles */
+.icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background-size: cover;
+}
+
+.icon-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chip {
+  display: inline-flex;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 9999px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0px 5.5px 16px rgba(0, 0, 0, 0.19);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(156px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}

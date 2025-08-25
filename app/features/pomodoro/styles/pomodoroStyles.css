@@ -1,0 +1,186 @@
+:root{
+    --white: #ffffff;
+    --black: #000000;
+
+    --gray-950: #0d0d0d;
+    --gray-900: #1a1a1a;
+    --gray-800: #333333;
+    --gray-700: #4d4d4d;
+    --gray-600: #666666;
+    --gray-500: #808080;
+    --gray-400: #999999;
+    --gray-300: #b3b3b3;
+    --gray-200: #cccccc;
+    --gray-100: #e6e6e6;
+    --gray-50: #f2f2f2;
+    
+    --red-950: #0d0404;
+    --red-900: #471515;
+    --red-800: #752323;
+    --red-700: #a33131;
+    --red-600: #d13f3f;
+    --red-500: #ff4c4c;
+    --red-400: #ff6e6e;
+    --red-300: #ff8f8f;
+    --red-200: #ffb0b0;
+    --red-100: #ffd9d9;
+    --red-50: #fff2f2;
+
+    --green-950: #040d06;
+    --green-900: #14401d;
+    --green-800: #216630;
+    --green-700: #2e8c43;
+    --green-600: #3ba856;
+    --green-500: #48c05a;
+    --green-400: #6adf7c;
+    --green-300: #8df99e;
+    --green-200: #b0fcbf;
+    --green-100: #d9ffe0;
+    --green-50: #f2fff2;
+
+    --blue-950: #040d0d;
+    --blue-900: #144141;
+    --blue-800: #216666;
+    --blue-700: #2e8c8c;
+    --blue-600: #3ba8a8;
+    --blue-500: #48c0c0;
+    --blue-400: #6adfdf;
+    --blue-300: #8df9f9;
+    --blue-200: #b0fcbf;
+    --blue-100: #d9ffff;
+    --blue-50: #f2ffff;
+
+    --white-alpha-950: #ffffff;
+    --white-alpha-900: #ffffff90;
+    --white-alpha-800: #ffffff81;
+    --white-alpha-700: #ffffff71;
+    --white-alpha-600: #ffffff62;
+    --white-alpha-500: #ffffff52;
+    --white-alpha-400: #ffffff43;
+    --white-alpha-300: #ffffff33;
+    --white-alpha-200: #ffffff24;
+    --white-alpha-100: #ffffff15;
+    --white-alpha-50: #ffffff05;
+
+    --black-alpha-950: #000000;
+    --black-alpha-900: #00000090;
+    --black-alpha-800: rgba(0, 0, 0, 0.506);
+    --black-alpha-700: #00000071;
+    --black-alpha-600: #00000062;
+    --black-alpha-500: #00000052;
+    --black-alpha-400: #00000043;
+    --black-alpha-300: #00000033;
+    --black-alpha-200: rgba(0, 0, 0, 0.24);
+    --black-alpha-100: #00000015;
+    --black-alpha-50: #00000005;
+
+    --red-alpha-950: #ff4c4c;
+    --red-alpha-900: #ff4c4c90;
+    --red-alpha-800: #ff4c4c81;
+    --red-alpha-700: #ff4c4c71;
+    --red-alpha-600: #ff4c4c62;
+    --red-alpha-500: #ff4c4c52;
+    --red-alpha-400: #ff4c4c43;
+    --red-alpha-300: #ff4c4c33;
+    --red-alpha-200: #ff4c4c24;
+    --red-alpha-100: #ff4c4c15;
+    --red-alpha-50: #ff4c4c05;
+
+    --green-alpha-950: #48c05a;
+    --green-alpha-900: #48c05a90;
+    --green-alpha-800: #48c05a81;
+    --green-alpha-700: #48c05a71;
+    --green-alpha-600: #48c05a62;
+    --green-alpha-500: #48c05a52;
+    --green-alpha-400: #48c05a43;
+    --green-alpha-300: #48c05a33;
+    --green-alpha-200: #48c05a24;
+    --green-alpha-100: #48c05a15;
+    --green-alpha-50: #48c05a05;
+
+    --blue-alpha-950: #48c0c0;
+    --blue-alpha-900: #48c0c090;
+    --blue-alpha-800: #48c0c081;
+    --blue-alpha-700: #48c0c071;
+    --blue-alpha-600: #48c0c062;
+    --blue-alpha-500: #48c0c052;
+    --blue-alpha-400: #48c0c043;
+    --blue-alpha-300: #48c0c033;
+    --blue-alpha-200: #48c0c024;
+    --blue-alpha-100: #48c0c015;
+    --blue-alpha-50: #48c0c005;
+
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    padding: 48px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.pomodoro-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pomodoro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bg-focus {
+    background-color: var(--red-50);
+}
+
+.bg-shortBreak {
+    background-color: var(--blue-50);
+}
+
+.bg-longBreak {
+    background-color: var(--green-50);
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #a991ff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: color 0.2s ease;
+}
+
+.back-button:hover {
+  color: #d4c2ff;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .bg-focus {
+        background-color: var(--red-950);
+    }
+
+    .bg-shortBreak {
+        background-color: var(--blue-950);
+    }
+
+    .bg-longBreak {
+        background-color: var(--green-950);
+    }
+}
