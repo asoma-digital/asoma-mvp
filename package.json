@@ -9,7 +9,8 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "export:web": "expo export --platform web",
-    "deploy": "gh-pages -d dist"
+    "build": "expo export --platform web && cp CNAME dist/",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "jest": {
     "preset": "jest-expo"
