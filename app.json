@@ -30,6 +30,7 @@
       "package": "com.clarifi.app"
     },
     "web": {
+      "basePath": "/",
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
