@@ -32,9 +32,12 @@
     "web": {
       "basePath": "/",
       "bundler": "metro",
-      "output": "export",
+      "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "plugins": [
       "expo-router"
     ],
