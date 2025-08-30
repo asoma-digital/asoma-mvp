@@ -9,7 +9,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "export:web": "expo export --platform web",
-    "build": "expo export --platform web && cp CNAME dist/",
+    "build": "expo export --platform web && cp CNAME dist/ && touch dist/.nojekyll",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "jest": {
