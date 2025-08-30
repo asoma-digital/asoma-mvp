@@ -2,7 +2,6 @@ import { PomodoroSettingsProvider } from './features/pomodoro/context/PomodoroSe
 import { PomodoroProvider } from './features/pomodoro/context/PomodoroContext';
 import '../styles/global.css';
 
-
 import { Slot } from 'expo-router';
 import { View } from 'react-native';
 
