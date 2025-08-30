@@ -13,30 +13,32 @@ export default function SignUpScreen() {
   const [loading, setLoading] = useState(false);
 
   const handleSignUp = async () => {
+
     if (!fullName.trim() || !email.trim() || !password.trim()) {
       showAlert('Missing Fields', 'Please fill out all required fields.');
       return;
     }
-  setLoading(true);
-  try {
-    const { user, session } = await signUpWithEmail(email, password, fullName);
 
-    console.log('Sign up response:', { user, session });
+    setLoading(true);
 
-    if (user || session) {
-      Alert.alert('Success', 'Please check your email to confirm your account.');
-      router.replace('/(drawer)/dashboard');
-    } else {
-      showAlert('Account Created', 'Check your email to confirm your account.');
+    try {
+      const { user, session } = await signUpWithEmail(email, password, fullName);
+      console.log('Sign up response:', { user, session });
+
+      if (user || session) {
+        Alert.alert('Success', 'Please check your email to confirm your account.');
+        router.replace('/(drawer)/dashboard');
+      } else {
+        showAlert('Account Created', 'Check your email to confirm your account.');
+      }
+      
+    } catch (error: any) {
+      console.error('Sign up error:', error.message);
+      showAlert('Sign Up Error', error.message || 'Something went wrong');
+    } finally {
+      setLoading(false);
     }
-
-  } catch (error: any) {
-    console.error('Sign up error:', error.message);
-    showAlert('Sign Up Error', error.message || 'Something went wrong');
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
   return (
     <View style={styles.container}>
@@ -68,14 +70,14 @@ export default function SignUpScreen() {
       />
 
       <TouchableOpacity
-  style={[styles.button, loading && { opacity: 0.6 }]}
-  onPress={handleSignUp}
-  disabled={loading}
->
-  <Text style={styles.buttonText}>
-    {loading ? 'Signing up...' : 'Sign Up'}
-  </Text>
-</TouchableOpacity>
+        style={[styles.button, loading && { opacity: 0.6 }]}
+        onPress={handleSignUp}
+        disabled={loading}
+      >
+        <Text style={styles.buttonText}>
+          {loading ? 'Signing up...' : 'Sign Up'}
+        </Text>
+      </TouchableOpacity>
 
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
     </View>

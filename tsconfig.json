@@ -4,7 +4,9 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [ "./*"]
+      "@/*": [
+        "./*"
+      ]
     }
   },
   "include": [
@@ -12,6 +14,9 @@
     "**/*.tsx",
     "app",
     "lib",
-    "components"
-, "constants"  ]
+    "components",
+    "constants",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
 }

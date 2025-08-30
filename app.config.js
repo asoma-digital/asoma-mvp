@@ -1,4 +1,3 @@
-// app.config.js
 import 'dotenv/config';
 
 export default {
@@ -9,31 +8,48 @@ export default {
     platforms: ['ios', 'android', 'web'],
     userInterfaceStyle: 'automatic',
     orientation: 'portrait',
-    icon: './assets/icon.png',
+    scheme: 'clarifimvp',
+    icon: './assets/images/icon.png',
     splash: {
-      image: './assets/splash.png',
+      image: './assets/images/splash-icon.png',
       resizeMode: 'contain',
       backgroundColor: '#ffffff',
     },
+    ios: {
+      supportsTablet: true,
+      bundleIdentifier: 'com.clarifi.app',
+      buildNumber: '8',
+      infoPlist: {
+        ITSAppUsesNonExemptEncryption: false,
+      },
+    },
+    android: {
+      adaptiveIcon: {
+        foregroundImage: './assets/images/adaptive-icon.png',
+        backgroundColor: '#ffffff',
+      },
+      edgeToEdgeEnabled: true,
+      package: 'com.clarifi.app',
+    },
+    userInterfaceStyle: 'automatic',
     assetBundlePatterns: ['**/*'],
+    web: {
+      basePath: '/',
+      bundler: 'metro',
+      output: 'static',
+      favicon: './assets/images/favicon.png',
+    },
+    plugins: ['expo-router'],
+    experiments: {
+      typedRoutes: true,
+    },
     extra: {
-      supabaseUrl: process.env.SUPABASE_URL,
-      supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+      router: {},
       eas: {
         projectId: process.env.EAS_PROJECT_ID,
       },
-    },
-    web: {
-      bundler: 'metro',
-      output: 'static',
-      build: {
-        babel: {
-          dangerouslyAddModulePathsToTranspile: [],
-        },
-      },
-      output: {
-        publicPath: '/',
-      },
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
     },
   },
 };
