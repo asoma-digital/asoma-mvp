@@ -27,14 +27,14 @@ export default function AuthLayout() {
         name="signup"
         options={{
           title: 'Sign Up',
-          tabBarIcon: ({ color }) => <TabBarIcon name="sign-up" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="user-plus" color={color} />,
         }}
       />
       <Tabs.Screen
         name="login"
         options={{
           title: 'Log In',
-          tabBarIcon: ({ color }) => <TabBarIcon name="log-in" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="sign-in" color={color} />,
         }}
       />
     </Tabs>
