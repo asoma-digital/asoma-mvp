@@ -9,8 +9,8 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "export:web": "expo export --platform web",
-    "build": "expo export --platform web && cp CNAME dist/ && touch dist/.nojekyll",
-    "deploy": "npm run build && gh-pages -d dist"
+    "build": "expo export --platform web --output-dir dist",
+    "deploy": "npx expo export:web --public-url https://www.asoma.app/ && cp CNAME dist/ && touch dist/.nojekyll && gh-pages -d dist --branch gh-pages --message 'manual deploy'"
   },
   "jest": {
     "preset": "jest-expo"
