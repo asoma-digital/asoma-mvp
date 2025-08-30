@@ -3,15 +3,15 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
-    "web": "expo start --web",
-    "test": "jest --watchAll",
-    "export:web": "expo export --platform web",
-    "build": "expo export --platform web --output-dir dist",
-    "deploy": "npx expo export:web --public-url https://www.asoma.app/ && cp CNAME dist/ && touch dist/.nojekyll && gh-pages -d dist --branch gh-pages --message 'manual deploy'"
-  },
+  "start": "expo start",
+  "android": "expo run:android",
+  "ios": "expo run:ios",
+  "web": "expo start --web",
+  "test": "jest --watchAll",
+  "export:web": "expo export --platform web --output-dir dist",
+  "build": "expo export --platform web --output-dir dist",
+  "deploy": "expo export --platform web --output-dir dist && cp CNAME dist/ && touch dist/.nojekyll && npx gh-pages -d dist --branch gh-pages --message 'manual deploy'"
+},
   "jest": {
     "preset": "jest-expo"
   },

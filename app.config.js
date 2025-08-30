@@ -6,14 +6,31 @@ export default {
     name: 'clarifi',
     slug: 'clarifi-mvp',
     version: '1.0.0',
+    platforms: ['ios', 'android', 'web'],
+    userInterfaceStyle: 'automatic',
+    orientation: 'portrait',
+    icon: './assets/icon.png',
+    splash: {
+      image: './assets/splash.png',
+      resizeMode: 'contain',
+      backgroundColor: '#ffffff',
+    },
+    assetBundlePatterns: ['**/*'],
     extra: {
       supabaseUrl: process.env.SUPABASE_URL,
       supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
     },
-    platforms: ['ios', 'android', 'web'],
     web: {
       bundler: 'metro',
       output: 'static',
+      build: {
+        babel: {
+          dangerouslyAddModulePathsToTranspile: [],
+        },
+      },
+      output: {
+        publicPath: '/',
+      },
     },
   },
 };
