@@ -9,9 +9,6 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "export:web": "expo export --platform web --output-dir dist",
-    "build": "expo export --platform web --output-dir dist",
-    "predeploy": "npx expo export --platform web",
-    "deploy": "gh-pages -d dist",
     "vercel-build": "expo export"
   },
   "jest": {
@@ -19,7 +16,6 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
-    "@expo/webpack-config": "^19.0.1",
     "@react-navigation/drawer": "^7.5.7",
     "@react-navigation/native": "^7.1.6",
     "@supabase/supabase-js": "^2.56.0",
