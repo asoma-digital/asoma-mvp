@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useRouter, useNavigationContainerRef } from 'expo-router';
+import { useRouter } from 'expo-router';
 import { View, ActivityIndicator } from 'react-native';
 
 export default function Index() {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './TodoPage.css';
+import '../../app-components/features/todo/TodoPage.css';
 import {
   addTodo,
   deleteTodo,
@@ -7,10 +7,9 @@ import {
   toggleTodo,
   toggleTopTask,
   markAsTopTask,
-} from './todoService';
-import { supabase } from '../../../lib/supabase';
+} from '../../app-components/features/todo/todoService';
+import { supabase } from '../../lib/supabase';
 import { useRouter } from 'expo-router';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 // Define Todo type
 type Todo = {

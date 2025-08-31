@@ -1,8 +1,8 @@
 // components/TopThreeTasks.tsx
 
 import { useEffect, useState } from 'react';
-import { supabase } from '../../../lib/supabase';
-import './TopThreeTasks.css';
+import { supabase } from '../../lib/supabase';
+import '../../app-components/features/topThreeTasks/TopThreeTasks.css';
 
 type Task = {
   id: string;

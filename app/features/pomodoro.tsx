@@ -1,11 +1,11 @@
-import './styles/pomodoroStyles.css'
-import type { PomodoroMode } from './components/types/mode'
+import '../../app-components/features/pomodoro/styles/pomodoroStyles.css'
+import type { PomodoroMode } from '../../app-components/features/pomodoro/components/types/mode'
 import { useRef, useState } from 'react'
-import TimerDisplay from './components/TimerDisplay'
-import ControlButtons from './components/ControlButtons'
-import { modeConfig } from './context/PomodoroSettingsContext'
-import OptionsModal from './components/OptionsModal'
-import SettingsModal from './components/SettingsModal'
+import TimerDisplay from '../../app-components/features/pomodoro/components/TimerDisplay'
+import ControlButtons from '../../app-components/features/pomodoro/components/ControlButtons'
+import { modeConfig } from '../../app-components/features/pomodoro/context/PomodoroSettingsContext'
+import OptionsModal from '../../app-components/features/pomodoro/components/OptionsModal'
+import SettingsModal from '../../app-components/features/pomodoro/components/SettingsModal'
 
 export default function PomodoroPage() {
     const [mode, setMode] = useState<PomodoroMode>('focus')

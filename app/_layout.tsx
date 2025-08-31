@@ -1,5 +1,5 @@
-import { PomodoroSettingsProvider } from './features/pomodoro/context/PomodoroSettingsContext';
-import { PomodoroProvider } from './features/pomodoro/context/PomodoroContext';
+import { PomodoroSettingsProvider } from '../app-components/features/pomodoro/context/PomodoroSettingsContext';
+import { PomodoroProvider } from '../app-components/features/pomodoro/context/PomodoroContext';
 import '../styles/global.css';
 
 import { Slot } from 'expo-router';
