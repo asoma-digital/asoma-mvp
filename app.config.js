@@ -5,27 +5,27 @@ export default {
     name: 'clarifi',
     slug: 'clarifi-mvp',
     version: '1.0.0',
+    owner: 'maz.wakes',
     platforms: ['ios', 'android', 'web'],
     userInterfaceStyle: 'automatic',
     orientation: 'portrait',
     scheme: 'clarifimvp',
-    icon: './assets/images/icon.png',
+    icon: './assets/images/clarifi-logo.png',
     splash: {
-      image: './assets/images/splash-icon.png',
+      image: './assets/images/clarifi-logo.png',
       resizeMode: 'contain',
       backgroundColor: '#ffffff',
     },
     ios: {
       supportsTablet: true,
-      bundleIdentifier: 'com.clarifi.app',
-      buildNumber: '8',
       infoPlist: {
         ITSAppUsesNonExemptEncryption: false,
       },
+      icon: './assets/images/clarifi-logo.png',
     },
     android: {
       adaptiveIcon: {
-        foregroundImage: './assets/images/adaptive-icon.png',
+        foregroundImage: './assets/images/clarifi-logo.png',
         backgroundColor: '#ffffff',
       },
       edgeToEdgeEnabled: true,
@@ -37,7 +37,7 @@ export default {
       basePath: '/',
       bundler: 'metro',
       output: 'static',
-      favicon: './assets/images/favicon.png',
+      favicon: './assets/images/clarifi-logo.png',
     },
     plugins: ['expo-router'],
     experiments: {

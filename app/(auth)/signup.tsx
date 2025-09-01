@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
 import { Text, View } from '@/components/Themed';
 import { useRouter } from 'expo-router';
 import { signUpWithEmail } from '@/lib/supabaseAuthUtils';
@@ -42,6 +42,8 @@ export default function SignUpScreen() {
 
   return (
     <View style={styles.container}>
+      <Image source={require('../../assets/images/clarifi.jpg')} style={styles.logo} />
+
       <Text style={styles.title}>Create an Account</Text>
 
       <TextInput
@@ -123,5 +125,12 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '100%',
+  },
+    logo: {
+    width: 120,
+    height: 120,
+    alignSelf: 'center',
+    marginBottom: 32,
+    resizeMode: 'contain',
   },
 });

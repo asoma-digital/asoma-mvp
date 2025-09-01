@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
 import { Text, View } from '@/components/Themed';
 
 import { useRouter } from 'expo-router';
@@ -40,6 +40,8 @@ const handleLogin = async () => {
 
   return (
     <View style={styles.container}>
+      <Image source={require('../../assets/images/clarifi.jpg')} style={styles.logo} />
+
       <Text style={styles.title}>Welcome Back</Text>
 
       <TextInput
@@ -108,5 +110,12 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '100%',
+  },
+  logo: {
+    width: 120,
+    height: 120,
+    alignSelf: 'center',
+    marginBottom: 32,
+    resizeMode: 'contain',
   },
 });
