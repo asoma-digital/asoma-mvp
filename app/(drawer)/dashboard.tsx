@@ -113,22 +113,23 @@ export default function DashboardScreen() {
             </LinearGradient>
           </div>
         </div>
-
-        {topTasks.length === 0 ? (
-          <Text style={styles.taskTextEmpty}>No top tasks set yet!</Text>
-        ) : (
-          topTasks.map((task) => (
-            <Text
-              key={task.id}
-              style={[
-                styles.taskText,
-                task.completed && styles.completedTaskText,
-              ]}
-            >
-              {task.task}
-            </Text>
-          ))
-        )}
+        <View style={styles.focusTasks}>
+          {topTasks.length === 0 ? (
+            <Text style={styles.taskTextEmpty}>No top tasks set yet!</Text>
+          ) : (
+            topTasks.map((task) => (
+              <Text
+                key={task.id}
+                style={[
+                  styles.taskText,
+                  task.completed && styles.completedTaskText,
+                ]}
+              >
+                {task.task}
+              </Text>
+            ))
+          )}
+        </View>
         <Divider/>
 
       </View>

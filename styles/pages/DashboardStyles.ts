@@ -82,7 +82,6 @@ cardHeader: {
     backgroundColor: '#fff',
     padding: 12,
     borderRadius: 12,
-    marginBottom: 10,
     color: 'black',
     textAlign: 'left',
     borderColor: '#04BDE728',
@@ -125,9 +124,14 @@ button: {
     textAlign: "center"
   },
   dots: {
-    display: 'flex',
+    display: 'none',
     flexDirection: 'row',
     gap: 22
+  },
+  focusTasks: {
+    paddingVertical: 28.5,
+    width: '100%',
+    gap: 10,
   }
 });
 
