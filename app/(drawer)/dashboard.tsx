@@ -1,8 +1,16 @@
-import { View, Text, StyleSheet, ScrollView, ActivityIndicator } from 'react-native';
-import DashboardCard from '@/components/dashboard/DashboardCard';
+import { View, Text, ScrollView, ActivityIndicator, Pressable } from 'react-native';
+import DashboardCard from '@/app-components/drawer/dashboard/DashboardCard';
 import { getCurrentUser } from '@/lib/supabaseAuthUtils';
 import { supabase } from '@/lib/supabase';
 import { useEffect, useState } from 'react';
+import { Link } from 'expo-router';
+
+
+import styles from '../../styles/pages/DashboardStyles';
+import { Timer, ClipboardCheck } from 'lucide-react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import StatDot from '@/app-components/drawer/dashboard/StatDot';
+import Divider from '@/app-components/drawer/dashboard/Divider';
 
 type Task = {
   id: string;
@@ -57,21 +65,55 @@ export default function DashboardScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>{`Welcome back, ${displayName}!`}</Text>
+      <div style={styles.topTwo}>
+        <DashboardCard
+          color1='#04BDE7'
+          color2='#0486BE'
+          icon={<Timer size={24} color="black" />}
+          title="Pomodoro Timer"
+          description="Stay focused with timed work sessions and breaks"
+          link="/features/pomodoro"
+          buttonText='Start Session'
+        />
 
-      <DashboardCard
-        title="Start a Pomodoro Timer"
-        description="Stay focused and productive with timed work sessions"
-        link="/features/pomodoro"
-      />
-
-      <DashboardCard
-        title="Go to Your To-Do List"
-        description="Organize your day and keep track of tasks"
-        link="/features/todo"
-      />
+        <DashboardCard
+          color1='#6AEAFB'
+          color2='#04BDE7'
+          icon={<ClipboardCheck size={24} color="black" />}
+          title="To-Do List"
+          description="Organize your priorities and track progress on important tasks"
+          link="/features/todo"
+          buttonText='View Tasks'
+        />
+      </div>
 
       <View style={styles.card}>
-        <Text style={styles.cardTitle}>Top 3 Tasks</Text>
+        <div style={styles.cardHeader}>
+          <div style={styles.cardText}>
+            <Text style={styles.cardTitle}>Today's Focus</Text>
+            <Text style={styles.cardSubtitle}>Your top priorities for maximum productivity</Text>
+          </div>
+          <div style={styles.cardStatsBar}>
+            <div style={styles.dots}>
+              <StatDot color="10B981" tasks="0"/>
+              <StatDot color="FF8A65" tasks="3"/>
+              <StatDot color="6B7280" tasks="3"/>
+            </div>
+            <LinearGradient
+              colors={['#04BDE7', '#0486BE']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
+              style={styles.button}
+            >
+              <Link href="/features/todo">
+                <Pressable>
+                  <Text style={styles.buttonText}>Add Task</Text>
+                </Pressable>
+              </Link>
+            </LinearGradient>
+          </div>
+        </div>
+
         {topTasks.length === 0 ? (
           <Text style={styles.taskTextEmpty}>No top tasks set yet!</Text>
         ) : (
@@ -87,61 +129,9 @@ export default function DashboardScreen() {
             </Text>
           ))
         )}
+        <Divider/>
+
       </View>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingVertical: 24,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  centered: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: '600',
-    marginBottom: 12,
-    color: 'white',
-  },
-  card: {
-    backgroundColor: '#1C1C1E',
-    borderRadius: 20,
-    padding: 20,
-    marginVertical: 12,
-    width: '90%',
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 2 },
-  },
-  cardTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    marginBottom: 12,
-    color: 'white',
-    textAlign: 'center',
-  },
-  taskText: {
-    backgroundColor: '#2C2C2E',
-    padding: 12,
-    borderRadius: 12,
-    marginBottom: 10,
-    color: 'white',
-    textAlign: 'center',
-  },
-  completedTaskText: {
-    textDecorationLine: 'line-through',
-    opacity: 0.6,
-  },
-  taskTextEmpty: {
-    color: '#ccc',
-    textAlign: 'center',
-    fontStyle: 'italic',
-  },
-});

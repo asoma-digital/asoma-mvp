@@ -18,5 +18,5 @@
     "constants",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "app-components/features/pomodoro/context"  ]
+, "app-components/features/pomodoro/context", "app-components/drawer/dashboard"  ]
 }
