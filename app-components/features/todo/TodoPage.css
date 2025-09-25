@@ -117,3 +117,100 @@
   color: white;
   font-size: 16px;
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 30, 30, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #232323;
+  color: #fff;
+  border-radius: 12px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+  min-width: 320px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.small-modal {
+  min-width: 320px;
+  max-width: 350px;
+  padding: 24px 20px;
+}
+
+.modal-content label {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  margin-bottom: 8px;
+  gap: 4px;
+}
+
+.modal-content input[type="date"] {
+  background: #1e1e1e;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  background: #7b61ff;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.modal-actions button:hover {
+  background: #6a4ee0;
+}
+
+.subtask-list {
+  margin: 0 0 0 32px;
+  padding: 8px 0 0 0;
+  list-style: none;
+}
+
+.subtask-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 15px;
+  background: none;
+  border: none;
+  color: #e0e0e0;
+  padding: 0;
+}
+
+.subtask-item:last-child {
+  margin-bottom: 16px;
+}
+
+.subtask-item.completed span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

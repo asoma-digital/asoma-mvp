@@ -8,6 +8,9 @@ export type Todo = {
   isTopTask: boolean
   userId: string
   created_at: string
+  start_date?: string
+  due_date?: string 
+  notes?: string // <-- Add notes field
 }
 
 // Add a new todo
@@ -97,4 +100,69 @@ export const getTopTasks = async (userId: string): Promise<Todo[]> => {
 
   if (error) throw new Error(`Failed to get top tasks: ${error.message}`)
   return data as Todo[]
+}
+
+// Update start and due dates for a todo (now also notes)
+export const updateTodoDates = async (
+  id: string,
+  startDate: string,
+  dueDate: string,
+  notes?: string // <-- Add notes param
+): Promise<void> => {
+  const { error } = await supabase
+    .from('todos')
+    .update({
+      start_date: startDate || null,
+      due_date: dueDate || null,
+      notes: notes ?? null, // <-- Update notes
+    })
+    .eq('id', id);
+
+  if (error) throw new Error(`Failed to update todo dates: ${error.message}`);
+}
+
+// Subtask type
+export type Subtask = {
+  sid: string
+  todo_id: string
+  userId: string
+  subtask: string
+  completed: boolean
+}
+
+// Get all subtasks for a todo
+export const getSubtasks = async (todoId: string): Promise<Subtask[]> => {
+  const { data, error } = await supabase
+    .from('subtasks')
+    .select('*')
+    .eq('todo_id', todoId)
+    .order('sid', { ascending: true });
+  if (error) throw new Error(`Failed to fetch subtasks: ${error.message}`);
+  return data as Subtask[];
+}
+
+// Add a subtask to a todo (requires userId)
+export const addSubtask = async (todoId: string, userId: string, subtask: string): Promise<void> => {
+  const { error } = await supabase
+    .from('subtasks')
+    .insert([{ todo_id: todoId, userId, subtask, completed: false }]);
+  if (error) throw new Error(`Failed to add subtask: ${error.message}`);
+}
+
+// Toggle subtask completion
+export const toggleSubtask = async (sid: string, completed: boolean): Promise<void> => {
+  const { error } = await supabase
+    .from('subtasks')
+    .update({ completed })
+    .eq('sid', sid);
+  if (error) throw new Error(`Failed to toggle subtask: ${error.message}`);
+}
+
+// Delete a subtask
+export const deleteSubtask = async (sid: string): Promise<void> => {
+  const { error } = await supabase
+    .from('subtasks')
+    .delete()
+    .eq('sid', sid);
+  if (error) throw new Error(`Failed to delete subtask: ${error.message}`);
 }
